@@ -1,0 +1,77 @@
+// VARIABLES
+
+$baseColor: #4d76d1;
+$baseDarkerColor: #414992;
+$textColor: #fff;
+$grayColor: #e2e2e2;
+
+$fontSizeH1: 48px;
+$fontSizeH2: 30px;
+$fontSizeH3: 18px;
+$fontSizeMain: 16px;
+$fontSizeLink: 14px;
+$fontSizeSmall: 14px;
+
+$lineHeightMain: 22px;
+
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightBold: 700;
+
+$fontScaleXS: 1.6;
+$fontScaleSM: 1.4;
+$fontScaleMD: 1.2;
+$fontScaleLG: 1.1;
+
+$margin1: 55px;
+$margin2: 34px;
+$margin3: 21px;
+$margin4: 13px;
+$margin5: 8px;
+$margin6: 5px;
+
+$xs: 576px;
+$sm: 767px;
+$md: 991px;
+$lg: 1200px;
+
+$maxWidth: 767px;
+
+$transitionTime: 0.2s;
+
+$dotSize: 6px;
+
+$borderRadius: 5px;
+@mixin transition() {
+   transition: all $transitionTime;
+}
+
+@mixin boxShadow() {-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+   -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+}
+
+@mixin max($res) {
+   @media (max-width: $res) {
+      @content
+   }
+}
+
+@mixin min($res) {
+   @media (max-width: $res) {
+      @content
+   }
+}
+
+@mixin fontSizeRWD($fontSize) {
+   font-size: $fontSize;
+   @include max($md) {
+      font-size: $fontSize/$fontScaleMD;
+   }
+   @include max($sm) {
+      font-size: $fontSize/$fontScaleSM;
+   }
+   @include max($xs) {
+      font-size: $fontSize/$fontScaleXS;
+   }
+}

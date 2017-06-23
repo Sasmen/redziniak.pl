@@ -1,0 +1,62 @@
+@import "variables";
+
+.avatar {
+   width: 100%;
+   height: 800px;
+   max-width: 100%;
+   margin-top: 0;
+   margin-bottom: 0;
+   background: url("../img/bg.jpg") no-repeat;
+   background-size: cover;
+   position: relative;
+   padding: 0;
+   &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 250px;
+      background: -moz-linear-gradient(top, rgba($baseColor, 0) 0%, rgba($baseColor, 1) 95%);
+      background: -webkit-linear-gradient(top, rgba($baseColor, 0) 0%, rgba($baseColor, 1) 95%);
+      background: linear-gradient(to bottom, rgba($baseColor, 0) 0%, rgba($baseColor, 1) 95%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#7db9e8', GradientType=0);
+      z-index: 10;
+   }
+}
+
+.avatar-wrapper {
+   position: fixed;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+}
+
+.photo--img {
+   border-radius: 50%;
+   border: 3px solid #ffffff;
+   height: 144px;
+   width: 144px;
+}
+
+.photo {
+   margin-bottom: $margin3;
+
+}
+
+.name {
+   font-size: $fontSizeH1;
+   text-transform: uppercase;
+   font-weight: $fontWeightBold;
+   margin-bottom: $margin5;
+   margin-top: $margin3;
+   @include fontSizeRWD($fontSizeH1);
+}
+
+.profession {
+   font-size: $fontSizeH3;
+   margin-top: $margin5;
+   margin-bottom: 75px;
+}

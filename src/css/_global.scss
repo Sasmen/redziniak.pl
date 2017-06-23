@@ -1,0 +1,135 @@
+@import "variables";
+
+// GLOBAL STYLES
+
+body {
+   padding: 0;
+   margin: 0;
+   background: $baseColor;
+   font-family: "Ubuntu", sans-serif;
+   font-size: $fontSizeMain;
+   color: $textColor;
+   text-align: center;
+}
+
+input, textarea {
+   font-family: "Ubuntu", sans-serif;
+}
+
+.text {
+   font-size: $fontSizeMain;
+   line-height: $lineHeightMain;
+   text-align: left;
+}
+
+.text--justify {
+   text-align: justify;
+}
+
+button, a {
+   background: none;
+   border: none;
+   font-style: normal;
+   text-decoration: none;
+   color: inherit;
+   margin: 0;
+   padding: 0;
+   &:hover {
+      text-decoration: none;
+   }
+}
+
+.contentWrapper {
+   background: $baseColor;
+   position: relative;
+   z-index: 15;
+   padding: 1px;
+}
+
+img {
+   max-width: 100%;
+}
+
+// SECTION
+
+.section {
+   margin: $margin1 auto;
+   padding: $margin1 $margin2;
+   max-width: $maxWidth;
+   @include max($lg) {
+      margin: $margin1/$fontScaleLG auto;
+      padding-top: $margin1/$fontScaleLG;
+      padding-bottom: $margin1/$fontScaleLG;
+   }
+   @include max($md) {
+      margin: $margin1/$fontScaleMD auto;
+      padding-top: $margin1/$fontScaleMD;
+      padding-bottom: $margin1/$fontScaleMD;
+   }
+   @include max($sm) {
+      margin: $margin1/$fontScaleSM auto;
+      padding-top: $margin1/$fontScaleSM;
+      padding-bottom: $margin1/$fontScaleSM;
+   }
+   @include max($xs) {
+      margin: $margin1/$fontScaleXS auto;
+      padding-top: $margin1/$fontScaleXS;
+      padding-bottom: $margin1/$fontScaleXS;
+   }
+}
+
+.section-header {
+   text-transform: uppercase;
+   font-size: $fontSizeH2;
+   text-align: center;
+   letter-spacing: 1px;
+   font-weight: $fontWeightBold;
+   @include fontSizeRWD($fontSizeH2);
+}
+
+// DOTS
+
+.decorator {
+   display: flex;
+   height: $dotSize;
+   width: $dotSize*5;
+   justify-content: space-between;
+   margin: 0;
+}
+
+.decorator-dot {
+   height: $dotSize;
+   width: $dotSize;
+   border-radius: 50%;
+   background: $textColor;
+}
+
+.decorator--center {
+   margin: 0 auto;
+}
+
+// COLUMNS
+
+.row {
+   display: flex;
+   justify-content: space-between;
+   margin: 0 -15px;
+}
+
+.row-col {
+   margin: 0 15px;
+   width: 100%;
+
+}
+
+.row--col-sm {
+   @include max($sm) {
+      flex-direction: column;
+      &.row {
+         margin: 0;
+      }
+      .row-col {
+         margin: 0;
+      }
+   }
+}

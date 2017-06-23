@@ -1,0 +1,129 @@
+@import "variables";
+
+@mixin link {
+   font-size: $fontSizeLink;
+   text-transform: uppercase;
+   color: $textColor;
+   text-decoration: none;
+   font-weight: $fontWeightMedium;
+   letter-spacing: 1px;
+   opacity: 0.75;
+   @include transition();
+   &:after {
+      @include transition();
+      content: "";
+      height: 2px;
+      width: 100%;
+      display: block;
+      background: $textColor;
+      position: relative;
+      top: -8px;
+      opacity: 0;
+   }
+   &:hover {
+      opacity: 1;
+      &:after {
+         opacity: 1;
+         top: 1px;
+      }
+   }
+}
+
+.menu {
+   text-align: right;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   z-index: 20;
+   background: rgba($baseColor, 0);
+   border-bottom: 1px solid rgba($textColor, 0.2);
+}
+
+.menu-hamburger {
+   @include link;
+   display: none;
+   padding: $margin3;
+   &:focus {
+      outline: none;
+   }
+   &.open {
+      opacity: 1;
+      &:after {
+         opacity: 1;
+         top: 1px;
+      }
+   }
+}
+
+.menu--mobile {
+   .menu-hamburger {
+      width: auto;
+      display: block;
+      cursor: pointer;
+   }
+   .menu-home {
+      width: auto;
+   }
+   .menuElement {
+      display: block;
+      margin: 0;
+      padding: 0 21px;
+      text-align: center;
+      &:last-child {
+         margin-bottom: 20px;
+      }
+   }
+   .menuElement-link {
+      line-height: 34px;
+
+   }
+   .menu-list {
+      width: 100%;
+      padding: 0;
+   }
+}
+
+.menuElement-link {
+   @include link;
+   display: block;
+}
+
+.menuElement-link--active {
+   font-weight: $fontWeightBold;
+   opacity: 1;
+}
+
+.menuElement {
+   display: inline-block;
+   margin: 0 17px;
+
+}
+
+.menu-list {
+   margin: 0;
+   padding: $margin3;
+   overflow: hidden;
+   @include transition();
+   &.hide {
+      //display: none;
+      //opacity: 0;
+   }
+   &.show {
+      //opacity: 1;
+   }
+}
+
+.menu-home {
+   @include link;
+   padding: $margin3;
+
+   text-align: left;
+}
+
+.menu-container {
+   width: $maxWidth;
+}

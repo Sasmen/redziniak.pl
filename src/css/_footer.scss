@@ -1,0 +1,22 @@
+@import "variables";
+
+.footer {
+   padding: 21px 0;
+   line-height:$lineHeightMain;
+   margin-bottom: $margin2;
+}
+
+.footer-link {
+   font-weight: $fontWeightBold;
+   &:hover {
+      text-decoration: underline;
+   }
+}
+.footer-separator {
+   margin: 0 21px;
+   @include max($sm){
+      display: block;
+      visibility: hidden;
+      height: 5px;
+   }
+}

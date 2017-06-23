@@ -1,0 +1,99 @@
+@import "variables";
+
+.form-col-50p {
+   width: 50%;
+   display: inline-block;
+}
+
+.input {
+   display: block;
+   width: 100%;
+   margin-bottom: $margin3;
+
+}
+
+.input-label {
+   font-weight: $fontWeightMedium;
+   font-size: $fontSizeMain;
+   display: block;
+   text-align: left;
+   width: 100%;
+}
+
+.input-input {
+   @include transition;
+   display: block;
+   width: 100%;
+   background: $textColor;
+   line-height: 45px;
+   height: 45px;
+   border: none;
+   border-radius: $borderRadius;
+   padding: 0 15px;
+   margin-top: 5px;
+   box-sizing: border-box;
+   font-size: $fontSizeMain;
+   font-weight: $fontWeightMedium;
+   color: $baseDarkerColor;
+   background: url("../img/icon-invalid.svg") no-repeat right -16px top 14px, $textColor;
+   background-size: 16px;
+   &:focus {
+      outline: none;
+      background: url("../img/icon-invalid.svg") no-repeat right -16px top 14px, $grayColor;
+      background-size: 16px;
+
+   }
+}
+
+.input-input--invalid .input-input {
+   background: url("../img/icon-invalid.svg") no-repeat right 14px top 14px, $textColor;
+   background-size: 16px;
+   &:focus {
+      outline: none;
+      background: url("../img/icon-invalid.svg") no-repeat right 14px top 14px, $grayColor;
+      background-size: 16px;
+
+   }
+}
+
+.input-input--valid .input-input {
+   background: url("../img/icon-invalid.svg") no-repeat right -16px top 14px, $textColor;
+   background-size: 16px;
+   &:focus {
+      outline: none;
+      background: url("../img/icon-invalid.svg") no-repeat right -16px top 14px, $grayColor;
+      background-size: 16px;
+   }
+}
+
+.input-error {
+   text-align: left;
+   margin-top: 3px;
+   font-size: $fontSizeSmall;
+}
+
+.input-textarea {
+   @extend .input-input;
+   width: 100%;
+   height: 144px;
+   max-width: 100%;
+   box-sizing: border-box;
+}
+
+.input-submit {
+   @extend .input-input;
+   color: $baseColor;
+   text-transform: uppercase;
+   width: auto;
+   display: inline-block;
+   cursor: pointer;
+   padding: 0 $margin3;
+   &:hover {
+      background: $baseDarkerColor;
+      color: $textColor;
+   }
+}
+
+.form-footer {
+   text-align: right;
+}

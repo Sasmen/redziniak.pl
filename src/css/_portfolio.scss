@@ -1,0 +1,99 @@
+@import "variables";
+
+.gallery {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   @include max($md) {
+      flex-direction: column;
+   }
+}
+
+.work {
+   @include transition();
+   background: none;
+   max-width: $maxWidth /2 - $margin3;
+   margin: 0 $margin3 $margin3 $margin3;
+   &:nth-of-type(2n) {
+      margin-right: 0;
+      @include max($md) {
+         margin-right: auto;
+         margin-left: auto;
+      }
+   }
+   &:nth-of-type(2n +1) {
+      margin-left: 0;
+      @include max($md) {
+         margin-left: auto;
+         margin-right: auto;
+      }
+   }
+   &:hover {
+      opacity: 0.95;
+      //transform: scale(1.05);
+   }
+}
+
+.workInfo-title {
+   @extend .section-header;
+   font-size: $fontSizeH3;
+   text-transform: none;
+   display: block;
+   text-align: left;
+   margin-top: $margin5;
+   margin-bottom: $margin5;
+
+}
+
+.workInfo-description {
+   @extend .text;
+   display: block;
+   margin-top: $margin6;
+   font-size: 14px;
+}
+
+.workImage {
+   position: relative;
+   display: block;
+   border: 3px solid $textColor;
+   box-sizing: border-box;
+   border-radius: $borderRadius;
+}
+
+.workImage-img {
+   vertical-align: bottom;
+}
+
+.workImage-links {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+}
+
+.workImage-linksIn {
+   padding: 8px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.workImage-link {
+   @include boxShadow;
+   @include transition;
+   background: $baseColor;
+   color: $textColor;
+   line-height: $lineHeightMain;
+   padding: 8px 16px;
+   font-size: $fontSizeLink;
+   font-weight: $fontWeightBold;
+   display: inline-block;
+   border-radius: 3px;
+   border: 2px solid $baseColor;
+   &:hover {
+      //transform: scale(1.05);
+      color: $baseColor;
+      background: $textColor;
+      border-color: $baseColor;
+
+   }
+}
