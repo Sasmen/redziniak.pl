@@ -1,2 +1,2 @@
 <h1>Strona wizytkówka mojej osoby.</h1>
-<p>Strona zaprojektowana i zakodowana całkowicie przezeniem bez wykorzystania jakichkolwiek bibliotek i gotowych rozwiązań JS czy CSS.
+<p>Strona zaprojektowana i zakodowana całkowicie przezemnie <b>bez</b> wykorzystania <b>jakichkolwiek bibliotek i frameworków</b> JS czy CSS.
